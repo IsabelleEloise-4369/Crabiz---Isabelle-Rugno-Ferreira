@@ -1,0 +1,89 @@
+{% extends "template.html" %}
+
+{% block conteudo %}
+
+<body>
+    <div class="phone">
+        <div class="contact-name">Contato</div>
+        <div class="screen">
+            <div class="chat-container" id="chat-container">
+             <p> Escolha um usuario para enviar mensagem </p>
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+            <select name="usuario" id="usuario" class="centered-elements" onchange="mostrar_mensagem()">
+                <option value="telefone">Contatos</option>
+            </select>
+            <button id="send-button" class="centered-elements" onclick="envia_mensagem()">Enviar</button>
+        </div>
+    </div>
+</body>
+
+
+<script type="text/javascript">
+    function mostrar_usuarios(){
+
+        // REQUISIÇÃO VIA AJAX
+        $.ajax({
+            url:"/get/usuarios",
+            type:"GET",
+            success: function(contatos){
+                for(let i=0; i<contatos.length; i++){
+                    let tag = '<option value="'+contatos[i]['telefone']+'">'+contatos[i]['nome']+'</option>'
+                    $("#usuario").append(tag)
+                }
+            }
+        })
+    }
+    $(document).ready(mostrar_usuarios())
+
+
+    function mostrar_mensagem(){
+
+        // REQUISIÇAO VIA AJAX
+        $.ajax({
+            url:"/get/mensagens/" + $("#usuario").val(),
+            type:"GET",
+            success: function (mensagens) {
+
+                // AQUI ESTAMOS LIMPANDO A DIV QUE ARMAZENA  
+                $("#chat-container").empty()
+
+                for (let i=0; i<mensagens.length; i++){
+                    let tag = "<p>"+mensagens[i]["mensagem"]+"</p>"
+                    // AQUI ESTAMOS CHAMANDO O NOME DA SUA DIV QUE ESTÁ INSERIDA AS MENSAGENS
+                    $("#chat-container").append(tag)
+                }
+            }
+        })
+    }
+    
+    function envia_mensagem(){ 
+
+        var dados = {
+        mensagem: $("#message-input").val(),
+        usuario: $("#usuario").val(),
+        
+    }
+        
+        // REQUISIÇAO VIA AJAX
+        $.ajax({
+            url:"/post/enviamensagens",
+            type:"POST",
+            // Dados em formato JSON
+            data:JSON.stringify(dados),
+            contentType: "application/json",
+            success: mostrar_mensagem(),  
+            error: function(){
+                alert("ERRO AO TENTAR ENVIAR MENSAGEM, ENTRE EM CONTATO COM O SERVIDOR")
+            }
+        })
+
+    }
+    setInterval(mostrar_mensagem, 5000);
+
+    $(document).ready(mostrar_usuarios())
+</script>
+
+{% endblock %}

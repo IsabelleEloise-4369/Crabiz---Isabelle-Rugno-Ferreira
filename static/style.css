@@ -1,0 +1,215 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFDDCC; /* Rosa claro */
+}
+
+header {
+    background-color: #FF6699; /* Rosa médio */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    text-align: center;
+}
+
+.logo img {
+    width: 200px; /* Ajuste conforme necessário */
+}
+
+.header-content {
+    display: flex; /* Permite que o título e as abas fiquem lado a lado */
+    align-items: center; /* Alinha verticalmente */
+}
+
+.header-content h1 {
+    margin-right: 20px; /* Adiciona espaço entre o título e as abas */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    justify-content: center; /* Centralizar o conteúdo na horizontal */
+    align-items: center; /* Centralizar o conteúdo na vertical */
+    min-height: 100vh;
+    background-color: #FFDDCC; /* Rosa claro */
+}
+
+.container {
+    width: 500px;
+    margin: 100px auto; /* Centraliza horizontalmente */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.centered-elements {
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #FF6699; /* Rosa médio */
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center; /* Centralizar os botões horizontalmente */
+}
+
+button {
+    padding: 10px;
+    background-color: #FF6699; /* Rosa médio */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+button:hover {
+    background-color: #FF3366; /* Rosa mais escuro */
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: #FF6699; /* Rosa médio */
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #FF6699;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.screen {
+    background-color: #fff;
+    height: 450px;
+    overflow-y: auto; /* Alterado de "scroll" para "auto" para exibir a barra de rolagem apenas quando necessário */
+    padding: 10px;
+}
+
+.chat-container {
+    padding: 10px;
+    max-height: 100%; /* Definindo a altura máxima para 100% */
+    overflow-y: auto; /* Adicionando overflow-y: auto para habilitar a barra de rolagem vertical */
+}
+
+.phone {
+    background-color: #ffb8d8;
+    border-radius: 20px;
+    width: 600px; /* Largura do celular */
+    height: 600px; /* Altura do celular */
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.contact-name {
+    background-color: #d8009e; /* Cor de fundo do nome do contato */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bottom-bar {
+    background-color: #ffc3d4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Distribui o espaço entre os elementos */
+}
+
+.bottom-bar input[type="text"] {
+    flex: 1;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.bottom-bar select {
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.bottom-bar button {
+    border: none;
+    border-radius: 5px;
+    background-color: #f321b4; /* Cor de fundo do botão de enviar */
+    color: #fff;
+    cursor: pointer;
+    /* width: 70px; Tamanho reduzido */
+}
+
+.bottom-bar button:hover {
+    background-color: #df0c8e; /* Cor de fundo do botão de enviar ao passar o mouse */
+}

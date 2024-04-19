@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+
+{% block conteudo %}
+
+<div class="container">
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+        </div>
+        <button type="submit" href="/chat.py" >Entrar</button>
+    </form>
+    <div class="signup-link">
+        <p>Não tem uma conta? <a>Cadastre-se</a></p>
+    </div>
+</div>
+
+{% endblock %}

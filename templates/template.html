@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - ChatCrabiz</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- IMPORTANDO JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/static/logo.png" alt="ChatCrabiz">
+            <h1>ChatCrabiz</h1>
+        </div>
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    {%block conteudo%}
+    {%endblock%}
+    
+    <footer>
+        <p>&copy; 2024 ChatCrabiz. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
